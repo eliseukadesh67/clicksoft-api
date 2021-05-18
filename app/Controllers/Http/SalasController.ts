@@ -1,4 +1,5 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Professor from 'App/Models/Professor'
 import Sala from 'App/Models/Sala'
 
 export default class SalasController {
@@ -9,7 +10,7 @@ export default class SalasController {
   }
 
   public async store ({request}: HttpContextContract) {
-    const data = request.only(['numero', 'capacidade', 'disponivel'])
+    let data = request.only(['numero', 'capacidade', 'disponivel', 'professor_id'])
 
     const sala = await Sala.create(data)
 
