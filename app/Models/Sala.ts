@@ -2,14 +2,14 @@ import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Sala extends BaseModel {
   @column({ isPrimary: true })
-  public id: number
+  public sala_id: number
 
-  @column({ isPrimary: true })
+  @column()
   public numero: number
 
-  @column({ isPrimary: true })
+  @column()
   public capacidade: number
 
-  @column({ isPrimary: true })
+  @column()
   public disponivel: boolean
 }
