@@ -8,6 +8,12 @@ export default class AlunosController {
     return alunos
   }
 
+  public async indexBysala ({params}: HttpContextContract) {
+    const alunos = await Aluno.all()
+
+    return alunos.filter(aluno => aluno.sala === params.sala)
+  }
+
   public async store ({request}: HttpContextContract) {
     const data = request.only(['nome', 'email', 'matricula', 'nascimento'])
 
@@ -25,6 +31,17 @@ export default class AlunosController {
   public async update ({request, params}: HttpContextContract) {
     const aluno = await Aluno.findOrFail(params.id)
     const data = request.only(['nome', 'email','matricula','nascimento'])
+
+    aluno.merge(data)
+
+    await aluno.save()
+
+    return aluno
+  }
+
+  public async insert_sala ({request}: HttpContextContract) {
+    const aluno = await Aluno.findOrFail(request.body().aluno_id)
+    const data = request.only(['sala'])
 
     aluno.merge(data)
 
