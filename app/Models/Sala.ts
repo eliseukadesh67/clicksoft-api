@@ -12,4 +12,7 @@ export default class Sala extends BaseModel {
 
   @column()
   public disponivel: boolean
+
+  @column()
+  public professor_id: number
 }
