@@ -26,3 +26,6 @@ Route.get('/', async () => {
 
 Route.get('/alunos', 'AlunosController.index')
 Route.post('/alunos', 'AlunosController.store')
+Route.get('/alunos:id', 'AlunosController.show')
+Route.put('/alunos/:id', 'AlunosController.update')
+Route.delete('/alunos/:id', 'AlunosController.destroy')
