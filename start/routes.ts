@@ -25,14 +25,16 @@ Route.get('/', async () => {
 })
 
 Route.get('/alunos', 'AlunosController.index')
+Route.get('/alunos_sala/:sala', 'AlunosController.indexBysala')
 Route.post('/alunos', 'AlunosController.store')
-Route.get('/alunos:id', 'AlunosController.show')
+Route.get('/alunos/:id', 'AlunosController.show')
 Route.put('/alunos/:id', 'AlunosController.update')
+Route.put('/alunos/', 'AlunosController.insert_sala')
 Route.delete('/alunos/:id', 'AlunosController.destroy')
 
 Route.get('/professores', 'ProfessoresController.index')
 Route.post('/professores', 'ProfessoresController.store')
-Route.get('/professores:id', 'ProfessoresController.show')
+Route.get('/professores/:id', 'ProfessoresController.show')
 Route.put('/professores/:id', 'ProfessoresController.update')
 Route.delete('/professores/:id', 'ProfessoresController.destroy')
 
