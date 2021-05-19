@@ -9,7 +9,7 @@ CREATE TABLE salas (
   sala_id serial PRIMARY KEY,
   numero INTEGER UNIQUE,
   capacidade INTEGER,
-  disponivel BOOLEAN,
+  disponivel BOOLEAN
 );
 CREATE TABLE alunos (
 	aluno_id serial PRIMARY KEY,
