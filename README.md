@@ -13,21 +13,21 @@ Para esta aplicação, foi utilizado um Banco de dados Postgres dentro de um con
 
 ## Rodando a aplicação
 
-Primeiro é necessário inicializar e subir o Banco de Dados utilizando o Docker.
+Primeiramente é necessário inicializar e subir o banco de dados da aplicação.
 
-Primeiro é necessario fazer o build da imagem com o seguinte comando:
+Faça o build da imagem do banco de dados com o seguinte comando:
 
 ``` 
   docker build -t database . 
 ```
 
-Depois é necessario subir a imagem em um container utilizando o docker-compose
+Depois é necessario subir a imagem em um container utilizando o docker-compose.
 
 ``` 
   docker-compose up -d 
 ```
 
-Verifique se o container do Banco de dados esta rodando 
+Verifique se o container do Banco de dados esta rodando.
 
 ``` 
   docker ps 
@@ -39,7 +39,7 @@ Para simplificar estes comandos anteriores você pode simplesmente utilizar um s
   ./db_init.sh
 ```
 
-Depois que o Banco esta funcionando, é necessario subir o servidor da API com o comando 
+Depois que o Banco esta funcionando, é necessario subir o servidor da API com o comando.
 
 ``` 
   npm start
